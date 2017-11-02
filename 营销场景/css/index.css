@@ -1,0 +1,256 @@
+@import 'common/minireset.min.css';
+@keyframes arrow {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+}
+@keyframes circle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+html canvas,
+body canvas {
+  z-index: 20;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 1s opacity;
+}
+html #wrap,
+body #wrap {
+  width: 100%;
+  height: 100%;
+}
+html #wrap .pages,
+body #wrap .pages {
+  height: 100%;
+  position: relative;
+}
+html #wrap .pages .page1,
+body #wrap .pages .page1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  display: none;
+  transition: 1s all;
+  display: block;
+  background: url("../img/b.png") no-repeat;
+  background-size: 100% 100%;
+}
+html #wrap .pages .page1.active,
+body #wrap .pages .page1.active {
+  z-index: 8;
+}
+html #wrap .pages .page1 .text,
+body #wrap .pages .page1 .text {
+  position: absolute;
+  top: 60%;
+  left: 30%;
+  color: white;
+}
+html #wrap .pages .page1 .text li,
+body #wrap .pages .page1 .text li {
+  margin-top: 10px;
+  transition: 1s transform;
+}
+html #wrap .pages .page1 .arrow,
+body #wrap .pages .page1 .arrow {
+  width: 90px;
+  height: 52px;
+  background: url("../img/arr.png") no-repeat;
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  margin-left: -46px;
+  animation: 1s linear infinite arrow;
+  z-index: 10;
+}
+html #wrap .pages .page2,
+body #wrap .pages .page2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  display: none;
+  transition: 1s all;
+  background: url("../img/c.png");
+  background-size: 100% 100%;
+}
+html #wrap .pages .page2.active,
+body #wrap .pages .page2.active {
+  z-index: 8;
+}
+html #wrap .pages .page2 .icons,
+body #wrap .pages .page2 .icons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90px;
+  height: 90px;
+  margin-left: -45px;
+  margin-top: -45px;
+}
+html #wrap .pages .page2 .icons .icon,
+body #wrap .pages .page2 .icons .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 1s transform;
+}
+html #wrap .pages .page2 .icons .icon:nth-of-type(1),
+body #wrap .pages .page2 .icons .icon:nth-of-type(1) {
+  background: url("../img/c1.png");
+}
+html #wrap .pages .page2 .icons .icon:nth-of-type(2),
+body #wrap .pages .page2 .icons .icon:nth-of-type(2) {
+  background: url("../img/c2.png");
+}
+html #wrap .pages .page2 .icons .icon:nth-of-type(3),
+body #wrap .pages .page2 .icons .icon:nth-of-type(3) {
+  background: url("../img/c3.png");
+}
+html #wrap .pages .page2 .icons .icon:nth-of-type(4),
+body #wrap .pages .page2 .icons .icon:nth-of-type(4) {
+  background: url("../img/c4.png");
+}
+html #wrap .pages .page2 .icons .icon:nth-of-type(5),
+body #wrap .pages .page2 .icons .icon:nth-of-type(5) {
+  background: url("../img/c5.png");
+}
+html #wrap .pages .page2 .icons .icon:nth-of-type(6),
+body #wrap .pages .page2 .icons .icon:nth-of-type(6) {
+  background: url("../img/c6.png");
+}
+html #wrap .pages .page3,
+body #wrap .pages .page3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  display: none;
+  transition: 1s all;
+  background: url("../img/d.png");
+  background-size: 100% 100%;
+}
+html #wrap .pages .page3.active,
+body #wrap .pages .page3.active {
+  z-index: 8;
+}
+html #wrap .pages .page3 .text,
+body #wrap .pages .page3 .text {
+  position: absolute;
+  top: 60%;
+  left: 10%;
+  font-size: 35px;
+  line-height: 38px;
+  color: blue;
+  transition: 1s transform;
+}
+html #wrap .pages .page4,
+body #wrap .pages .page4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  display: none;
+  transition: 1s all;
+  background: url("../img/e.png");
+  background-size: 100% 100%;
+}
+html #wrap .pages .page4.active,
+body #wrap .pages .page4.active {
+  z-index: 8;
+}
+html #wrap .pages .page4 .box .box1,
+body #wrap .pages .page4 .box .box1 {
+  border: 2px solid white;
+  border-radius: 15px;
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  top: 100px;
+  left: 16px;
+  transition: 1s all;
+  overflow: hidden;
+}
+html #wrap .pages .page4 .box .box2,
+body #wrap .pages .page4 .box .box2 {
+  border: 2px solid white;
+  border-radius: 15px;
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  top: 128px;
+  left: 200px;
+  transition: 1s all;
+  overflow: hidden;
+}
+html #wrap .pages .page5,
+body #wrap .pages .page5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  display: none;
+  transition: 1s all;
+  background: url("../img/f.png") no-repeat;
+  background-size: 100% 100%;
+}
+html #wrap .pages .page5.active,
+body #wrap .pages .page5.active {
+  z-index: 8;
+}
+html #wrap .arrow,
+body #wrap .arrow {
+  width: 90px;
+  height: 52px;
+  background: url("../img/arr.png") no-repeat;
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  margin-left: -46px;
+  animation: 1s linear infinite arrow;
+  z-index: 10;
+}
+html #wrap .music,
+body #wrap .music {
+  width: 47px;
+  height: 47px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: url("../img/music.png") no-repeat;
+  background-size: 100% 100%;
+  z-index: 10;
+}
+html #wrap .music.circle,
+body #wrap .music.circle {
+  animation: 1s infinite circle linear;
+}
